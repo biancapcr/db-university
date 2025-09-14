@@ -1,0 +1,56 @@
+1. Department → Degree Program
+
+Ogni Department offre più Degree Program.
+Relazione: 1 : N
+department_id è PK in DEPARTMENT.
+In DEGREE_PROGRAM diventa FK (FK department_id).
+
+2. Degree Program → Course
+
+Ogni Degree Program include diversi Course.
+Relazione: 1 : N
+degree_program_id è PK in DEGREE_PROGRAM.
+In COURSE diventa FK (FK degree_program_id).
+
+3. Course → Exam Session
+
+Ogni Course prevede diversi Exam Session.
+Relazione: 1 : N
+course_id è PK in COURSE.
+In EXAM_SESSION diventa FK (FK course_id).
+
+4. Degree Program → Student
+
+Ogni Student è iscritto a un solo Degree Program.
+Relazione: 1 : N
+degree_program_id è PK in DEGREE_PROGRAM.
+In STUDENT diventa FK (FK degree_program_id).
+
+5. Course ↔ Instructor (N:M con bridge)
+
+Un Course può essere tenuto da più Instructor, e un Instructor può insegnare più Course.
+Relazione: N : M → gestita da bridge COURSE_INSTRUCTOR.
+PK composta: (course_id, instructor_id).
+course_id = FK verso COURSE.
+instructor_id = FK verso INSTRUCTOR.
+
+La relazione N:M diventa due 1:N
+
+COURSE (1) → (N) COURSE_INSTRUCTOR
+INSTRUCTOR (1) → (N) COURSE_INSTRUCTOR
+
+6. Student ↔ Exam Session (N:M con bridge)
+
+Uno Student può iscriversi a più Exam Session.
+Un Exam Session può avere più Student iscritti.
+Relazione: N : M → gestita da bridge EXAM_REGISTRATION.
+PK composta: (exam_session_id, student_id).
+exam_session_id = FK verso EXAM_SESSION.
+student_id = FK verso STUDENT.
+
+Attributi aggiuntivi: grade, honors, status.
+
+Quindi da una relazione N:M si avranno due 1:N
+
+EXAM_SESSION (1) → (N) EXAM_REGISTRATION
+STUDENT (1) → (N) EXAM_REGISTRATION
