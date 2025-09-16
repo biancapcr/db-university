@@ -14,3 +14,19 @@ per ogni appello d'Esame a cui lo Studente ha partecipato, è necessario memoriz
 Pensiamo a quali entità (tabelle) creare per il nostro database e cerchiamo poi di stabilirne le relazioni. Infine, andiamo a definire le colonne e i tipi di dato di ogni tabella.
 
 Utilizzare https://www.drawio.com/ per la creazione dello schema.
+
+===
+
+## query: groupby, select
+
+Dopo aver creato un nuovo database nel vostro MySQL Workbench e aver importato lo schema allegato, eseguite le query del file allegato.
+
+Cosa consegnare?
+Dopo aver testato le vostre query con MySQL Workbench, riportatele in un file txt e caricatelo nella vostra repo. (E' la stessa di venerdì).
+
+===
+
+## query: join
+
+Utilizzando lo stesso database di ieri, eseguite le query in allegato.
+Caricate un secondo file nella stessa repo di ieri (db-university) con le query di oggi.
